@@ -8,7 +8,7 @@ import java.util.UUID;
 @Table(name = "Visitante")
 public class Visitante {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_organ")
     private UUID id_visit;
     @Column(name = "nome")

@@ -8,7 +8,7 @@ import java.util.UUID;
 @Table(name = "vcard_frente")
 public class VcardFrente {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_vcard")
     private UUID id_vcard;
     private UUID id_frente;
