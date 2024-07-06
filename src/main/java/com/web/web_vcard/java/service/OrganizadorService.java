@@ -1,8 +1,13 @@
 package com.web.web_vcard.java.service;
 
+import com.web.web_vcard.java.entity.Organizador;
 import com.web.web_vcard.java.repository.AdministradorRepository;
 import com.web.web_vcard.java.repository.OrganizadorRepository;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class OrganizadorService {
@@ -10,4 +15,17 @@ public class OrganizadorService {
     public OrganizadorService(OrganizadorRepository organizadorRepository) {
         this.organizadorRepository = organizadorRepository;
     }
+    public List<Organizador> findAll(){
+        return organizadorRepository.findAll();
+    }
+    public Optional<Organizador> findById(UUID id){
+        return organizadorRepository.findById(id);
+    }
+    public Organizador save (Organizador organizador){
+        return organizadorRepository.save(organizador);
+    }
+    public void delete(Organizador organizador){
+        organizadorRepository.delete(organizador);
+    }
+
 }
