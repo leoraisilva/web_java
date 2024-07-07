@@ -31,8 +31,8 @@ public class AdministradorController {
     public ResponseEntity<Object> getAdministrador (@PathVariable(value = "id")UUID id) {
         Optional<Administrador> administradorOptional = administradorService.findById(id);
         return administradorOptional.<ResponseEntity<Object>>map(
-                administrador -> ResponseEntity.status(HttpStatus.OK).body(administrador)).orElseGet(() ->
-                ResponseEntity.status(HttpStatus.NOT_FOUND).body("Administrador not Found")
+                administrador -> ResponseEntity.status(HttpStatus.OK).body(administrador)).
+                orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).body("Administrador not Found")
         );
     }
 

@@ -29,8 +29,8 @@ public class OrganizadorController {
     public ResponseEntity<Object> findById(@PathVariable(value = "id") UUID id){
         Optional<Organizador> organizadorOptional = organizadorService.findById(id);
         return organizadorOptional.<ResponseEntity<Object>>map(
-                organizador -> ResponseEntity.status(HttpStatus.OK).body(organizador)).orElseGet(() ->
-                ResponseEntity.status(HttpStatus.NOT_FOUND).body("Organizador Not Found")
+                organizador -> ResponseEntity.status(HttpStatus.OK).body(organizador)).
+                orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).body("Organizador Not Found")
         );
     }
 
