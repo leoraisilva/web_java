@@ -37,7 +37,7 @@ public class VcardTrasController {
     @PostMapping
     public ResponseEntity<Object> saveTras(@RequestBody @Valid VcardTrasDTO vcardTrasDTO){
         VcardTras vcardTras = new VcardTras();
-        BeanUtils.copyProperties(vcardTras, vcardTrasDTO);
+        BeanUtils.copyProperties(vcardTrasDTO, vcardTras);
         return ResponseEntity.status(HttpStatus.CREATED).body(vcardTrasService.save(vcardTras));
     }
     @PutMapping("/{id}")

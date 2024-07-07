@@ -4,6 +4,7 @@ import com.web.web_vcard.java.entity.VcardFrente;
 import com.web.web_vcard.java.entity.VcardTras;
 import com.web.web_vcard.java.repository.VcardFrenteRepository;
 import com.web.web_vcard.java.repository.VcardTrasRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,6 +23,7 @@ public class VcardTrasService {
     public Optional<VcardTras> findById(UUID id){
         return vcardTrasRepository.findById(id);
     }
+    @Transactional
     public VcardTras save(VcardTras vcardTras){
         return vcardTrasRepository.save(vcardTras);
     }

@@ -9,7 +9,7 @@ import java.util.UUID;
 public class Visitante {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_organ")
+    @Column(name = "id_visit")
     private UUID id_visit;
     @Column(name = "nome")
     private String nome;

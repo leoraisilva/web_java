@@ -51,7 +51,7 @@ public class ParticipanteController {
     @PostMapping
     public ResponseEntity<Object> saveParticipante(@RequestBody @Valid ParticipanteDTO participanteDTO){
         Participante participante = new Participante();
-        BeanUtils.copyProperties(participante, participanteDTO);
+        BeanUtils.copyProperties(participanteDTO, participante);
         return ResponseEntity.status(HttpStatus.CREATED).body(participanteService.save(participante));
     }
 

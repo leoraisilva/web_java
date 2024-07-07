@@ -35,7 +35,7 @@ public class VisitanteController {
     @PostMapping
     public ResponseEntity<Object> saveVisitante(@RequestBody @Valid VisitanteDTO visitanteDTO){
         Visitante visitante = new Visitante();
-        BeanUtils.copyProperties(visitante, visitanteDTO);
+        BeanUtils.copyProperties(visitanteDTO, visitante);
         return ResponseEntity.status(HttpStatus.CREATED).body(visitanteService.save(visitante));
     }
     @PutMapping("/{id}")

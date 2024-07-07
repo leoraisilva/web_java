@@ -36,7 +36,7 @@ public class VcardFrenteController {
     @PostMapping
     public ResponseEntity<Object> saveFrente(@RequestBody @Valid VcardFrenteDTO vcardFrenteDTO){
         VcardFrente vcardFrente = new VcardFrente();
-        BeanUtils.copyProperties(vcardFrente, vcardFrenteDTO);
+        BeanUtils.copyProperties(vcardFrenteDTO, vcardFrente);
         return ResponseEntity.status(HttpStatus.CREATED).body(vcardFrenteService.save(vcardFrente));
     }
     @PutMapping("/{id}")

@@ -2,6 +2,7 @@ package com.web.web_vcard.java.service;
 
 import com.web.web_vcard.java.entity.Participante;
 import com.web.web_vcard.java.repository.ParticipanteRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,6 +21,7 @@ public class ParticipanteService {
     public Optional<Participante> findById(UUID id){
         return participanteRepository.findById(id);
     }
+    @Transactional
     public Participante save(Participante participante){
         return participanteRepository.save(participante);
     }

@@ -3,6 +3,7 @@ package com.web.web_vcard.java.service;
 import com.web.web_vcard.java.entity.Organizador;
 import com.web.web_vcard.java.repository.AdministradorRepository;
 import com.web.web_vcard.java.repository.OrganizadorRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,6 +22,7 @@ public class OrganizadorService {
     public Optional<Organizador> findById(UUID id){
         return organizadorRepository.findById(id);
     }
+    @Transactional
     public Organizador save (Organizador organizador){
         return organizadorRepository.save(organizador);
     }
