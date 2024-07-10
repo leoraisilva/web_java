@@ -1,6 +1,7 @@
 package com.web.web_vcard.java.dto;
 
 import jakarta.persistence.Column;
+import jakarta.validation.constraints.NotBlank;
 
 import java.util.UUID;
 
@@ -14,7 +15,7 @@ public class VcardFrenteDTO {
     public String getUrl_img() {
         return url_img;
     }
-
+    @NotBlank
     public String getTitulo() {
         return titulo;
     }

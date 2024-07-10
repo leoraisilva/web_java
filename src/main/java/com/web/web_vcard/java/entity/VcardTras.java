@@ -2,12 +2,14 @@ package com.web.web_vcard.java.entity;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.UUID;
 
 @Entity
 @Table(name = "vcard_tras")
-public class VcardTras {
+public class VcardTras implements Serializable {
+    private static final long serialVersionUUID = 1L;
     @Id
     @Column(name = "id_tras")
     private UUID id_tras;

@@ -37,8 +37,11 @@ public class AdministradorController {
     }
 
     @PostMapping
-    public ResponseEntity<Administrador> saveAdministrador (@RequestBody @Valid AdministradorDTO administradorDTO){
+    public ResponseEntity<Object> saveAdministrador (@RequestBody @Valid AdministradorDTO administradorDTO){
         Administrador administrador = new Administrador();
+        if (administradorService.existsUsuario(administradorDTO.getUsuario())){
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Usuario Already Exist");
+        }
         BeanUtils.copyProperties(administradorDTO, administrador);
         return ResponseEntity.status(HttpStatus.CREATED).body(administradorService.save(administrador));
     }

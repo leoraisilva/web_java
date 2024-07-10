@@ -19,6 +19,9 @@ public class AdministradorService {
     public List<Administrador> findAll() {
         return administradorRepository.findAll();
     }
+    public boolean existsUsuario(String usuario){
+        return administradorRepository.existsUsuario(usuario);
+    }
 
     public Optional<Administrador> findById (UUID id){
         return administradorRepository.findById(id);

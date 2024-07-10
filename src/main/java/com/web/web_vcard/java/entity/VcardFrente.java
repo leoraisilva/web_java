@@ -2,17 +2,19 @@ package com.web.web_vcard.java.entity;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.util.UUID;
 
 @Entity
 @Table(name = "vcard_frente")
-public class VcardFrente {
+public class VcardFrente implements Serializable {
+    private static final long serialVersionUUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_vcard")
     private UUID id_vcard;
     private UUID id_frente;
-    @Column(name = "titulo")
+    @Column(name = "titulo", nullable = false)
     private String titulo;
     @Column(name = "conteudo")
     private String conteudo;

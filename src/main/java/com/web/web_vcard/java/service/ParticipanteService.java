@@ -18,6 +18,9 @@ public class ParticipanteService {
     public List<Participante> findAll(){
         return participanteRepository.findAll();
     }
+    public boolean existsUsuario(String Usuario){
+        return participanteRepository.existsUsuario(Usuario);
+    }
     public Optional<Participante> findById(UUID id){
         return participanteRepository.findById(id);
     }

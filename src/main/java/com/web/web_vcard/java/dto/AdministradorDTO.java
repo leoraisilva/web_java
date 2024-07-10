@@ -1,8 +1,12 @@
 package com.web.web_vcard.java.dto;
 
+import jakarta.validation.constraints.NotBlank;
+
 public class AdministradorDTO {
     private String nome;
+    @NotBlank
     private String usuario;
+    @NotBlank
     private String senha;
 
     public String getSenha() {

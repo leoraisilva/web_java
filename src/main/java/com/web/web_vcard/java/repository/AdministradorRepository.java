@@ -9,6 +9,7 @@ import java.util.UUID;
 
 public interface AdministradorRepository extends JpaRepository<Administrador, UUID> {
     public List<Administrador> findAll();
+    public boolean existsUsuario(String usuario);
     public Optional<Administrador> findById(UUID id);
     public Administrador save(Administrador administrador);
 }

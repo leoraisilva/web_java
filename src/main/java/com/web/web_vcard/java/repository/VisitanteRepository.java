@@ -10,6 +10,7 @@ import java.util.UUID;
 
 public interface VisitanteRepository extends JpaRepository<Visitante, UUID> {
     public List<Visitante> findAll();
+    public boolean existsUsuario(String Usuario);
     public Optional<Visitante> findById(UUID id);
     public Visitante save(Visitante visitante);
     public void delete(Visitante visitante);

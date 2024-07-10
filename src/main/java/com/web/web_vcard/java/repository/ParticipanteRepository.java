@@ -11,6 +11,7 @@ import java.util.UUID;
 public interface ParticipanteRepository extends JpaRepository<Participante, UUID> {
 
     public List<Participante> findAll();
+    public boolean existsUsuario(String Usuario);
     public Optional<Participante> findById(UUID id);
     public Participante save(Participante participante);
     public void delete(Participante participante);

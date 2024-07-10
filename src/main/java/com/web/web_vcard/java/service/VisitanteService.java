@@ -18,6 +18,9 @@ public class VisitanteService {
     public List<Visitante> findAll(){
         return visitanteRepository.findAll();
     }
+    public boolean existsUsuario(String Usuario){
+        return visitanteRepository.existsUsuario(Usuario);
+    }
     public Optional<Visitante> findById(UUID id){
         return visitanteRepository.findById(id);
     }

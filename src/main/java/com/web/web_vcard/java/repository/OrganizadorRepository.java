@@ -10,6 +10,7 @@ import java.util.UUID;
 public interface OrganizadorRepository extends JpaRepository<Organizador, UUID> {
 
     public List<Organizador> findAll();
+    public boolean existsUsuario(String Usuario);
     public Optional<Organizador> findById(UUID id);
     public Organizador save(Organizador organizador);
     public void delete(Organizador organizador);

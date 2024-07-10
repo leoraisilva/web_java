@@ -1,10 +1,13 @@
 package com.web.web_vcard.java.dto;
 
 import jakarta.persistence.Column;
+import jakarta.validation.constraints.NotBlank;
 
 public class ParticipanteDTO {
     private String nome;
+    @NotBlank
     private String usuario;
+    @NotBlank
     private String senha;
     private String tell;
     private String email;
