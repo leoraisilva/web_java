@@ -10,6 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -38,6 +40,7 @@ public class VcardTrasController {
     public ResponseEntity<Object> saveTras(@RequestBody @Valid VcardTrasDTO vcardTrasDTO){
         VcardTras vcardTras = new VcardTras();
         BeanUtils.copyProperties(vcardTrasDTO, vcardTras);
+        vcardTras.setDataPublicacao(LocalDate.now(ZoneId.of("UTC")));
         return ResponseEntity.status(HttpStatus.CREATED).body(vcardTrasService.save(vcardTras));
     }
     @PutMapping("/{id}")
@@ -47,7 +50,7 @@ public class VcardTrasController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Vcard_Tras Not Found");
         }
         VcardTras vcardTras = vcardTrasOptional.get();
-        vcardTras.setContato(vcardTrasDTO.getContato());
+        vcardTras.setCategoria(vcardTrasDTO.getCategoria());
         vcardTras.setDataPublicacao(vcardTrasDTO.getDataPublicacao());
         vcardTras.setProprietario_id(vcardTrasDTO.getProprietario_id());
         vcardTras.setProprietario_type(vcardTrasDTO.getProprietario_type());

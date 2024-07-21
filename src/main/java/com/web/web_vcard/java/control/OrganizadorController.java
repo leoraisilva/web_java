@@ -40,7 +40,7 @@ public class OrganizadorController {
         if (!organizadorOptional.isPresent()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Organizador Not Found");
         }
-        if (organizadorService.existsUsuario(organizadorDTO.getUsuario())){
+        if (organizadorService.existsByUsuario(organizadorDTO.getUsuario())){
             return ResponseEntity.status(HttpStatus.CONFLICT).body("Usuario Already Exist");
         }
         Organizador organizador = organizadorOptional.get();
@@ -58,7 +58,7 @@ public class OrganizadorController {
     @PostMapping
     public ResponseEntity<Object> saveOrganizador(@RequestBody @Valid OrganizadorDTO organizadorDTO ){
         Organizador organizador = new Organizador();
-        if (organizadorService.existsUsuario(organizadorDTO.getUsuario())){
+        if (organizadorService.existsByUsuario(organizadorDTO.getUsuario())){
             return ResponseEntity.status(HttpStatus.CONFLICT).body("Usuario Already Exist");
         }
         BeanUtils.copyProperties(organizadorDTO, organizador);

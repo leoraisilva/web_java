@@ -39,7 +39,7 @@ public class ParticipanteController {
         if(!participanteOptional.isPresent()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Participante Not Found");
         }
-        if (participanteService.existsUsuario(participanteDTO.getUsuario())){
+        if (participanteService.existsByUsuario(participanteDTO.getUsuario())){
             return ResponseEntity.status(HttpStatus.CONFLICT).body("Usuario Already Exist");
         }
         Participante participante = participanteOptional.get();
@@ -54,7 +54,7 @@ public class ParticipanteController {
     @PostMapping
     public ResponseEntity<Object> saveParticipante(@RequestBody @Valid ParticipanteDTO participanteDTO){
         Participante participante = new Participante();
-        if (participanteService.existsUsuario(participanteDTO.getUsuario())){
+        if (participanteService.existsByUsuario(participanteDTO.getUsuario())){
             return ResponseEntity.status(HttpStatus.CONFLICT).body("Usuario Already Exist");
         }
         BeanUtils.copyProperties(participanteDTO, participante);

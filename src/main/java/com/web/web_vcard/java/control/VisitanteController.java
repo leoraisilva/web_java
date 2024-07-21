@@ -35,7 +35,7 @@ public class VisitanteController {
     @PostMapping
     public ResponseEntity<Object> saveVisitante(@RequestBody @Valid VisitanteDTO visitanteDTO){
         Visitante visitante = new Visitante();
-        if (visitanteService.existsUsuario(visitanteDTO.getUsuario())){
+        if (visitanteService.existsByUsuario(visitanteDTO.getUsuario())){
             return ResponseEntity.status(HttpStatus.CONFLICT).body("Usuario Already Exist");
         }
         BeanUtils.copyProperties(visitanteDTO, visitante);
@@ -47,7 +47,7 @@ public class VisitanteController {
         if(!visitanteOptional.isPresent()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Visitante Not Found");
         }
-        if (visitanteService.existsUsuario(visitanteDTO.getUsuario())){
+        if (visitanteService.existsByUsuario(visitanteDTO.getUsuario())){
             return ResponseEntity.status(HttpStatus.CONFLICT).body("Usuario Already Exist");
         }
         Visitante visitante = visitanteOptional.get();

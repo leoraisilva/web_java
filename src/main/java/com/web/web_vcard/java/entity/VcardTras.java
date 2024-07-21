@@ -3,6 +3,7 @@ package com.web.web_vcard.java.entity;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.UUID;
 
@@ -11,9 +12,9 @@ import java.util.UUID;
 public class VcardTras implements Serializable {
     private static final long serialVersionUUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_tras")
     private UUID id_tras;
-
     @Column(name = "id_vcard")
     private UUID id_vcard;
     @Column(name = "informacao_contato")
@@ -21,9 +22,9 @@ public class VcardTras implements Serializable {
     @Column(name = "view")
     private long view;
     @Column(name = "categoria")
-    private String contato;
+    private String categoria;
     @Column(name = "data_publicacao")
-    private Date dataPublicacao;
+    private LocalDate dataPublicacao;
 
     @Column(name = "proprietario_id")
     private UUID proprietario_id;
@@ -35,7 +36,7 @@ public class VcardTras implements Serializable {
         return id_vcard;
     }
 
-    public Date getDataPublicacao() {
+    public LocalDate getDataPublicacao() {
         return dataPublicacao;
     }
 
@@ -43,8 +44,8 @@ public class VcardTras implements Serializable {
         return view;
     }
 
-    public String getContato() {
-        return contato;
+    public String getCategoria() {
+        return categoria;
     }
 
     public UUID getId_tras() {
@@ -67,15 +68,15 @@ public class VcardTras implements Serializable {
         this.id_vcard = id_vcard;
     }
 
-    public void setContato(String contato) {
-        this.contato = contato;
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
     }
 
     public void setId_tras(UUID id_tras) {
         this.id_tras = id_tras;
     }
 
-    public void setDataPublicacao(Date dataPublicacao) {
+    public void setDataPublicacao(LocalDate dataPublicacao) {
         this.dataPublicacao = dataPublicacao;
     }
 

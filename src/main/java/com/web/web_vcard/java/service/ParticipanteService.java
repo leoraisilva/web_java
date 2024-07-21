@@ -18,8 +18,8 @@ public class ParticipanteService {
     public List<Participante> findAll(){
         return participanteRepository.findAll();
     }
-    public boolean existsUsuario(String Usuario){
-        return participanteRepository.existsUsuario(Usuario);
+    public boolean existsByUsuario(String Usuario){
+        return participanteRepository.existsByUsuario(Usuario);
     }
     public Optional<Participante> findById(UUID id){
         return participanteRepository.findById(id);

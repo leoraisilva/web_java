@@ -19,8 +19,8 @@ public class OrganizadorService {
     public List<Organizador> findAll(){
         return organizadorRepository.findAll();
     }
-    public boolean existsUsuario(String Usuario){
-        return organizadorRepository.existsUsuario(Usuario);
+    public boolean existsByUsuario(String Usuario){
+        return organizadorRepository.existsByUsuario(Usuario);
     }
     public Optional<Organizador> findById(UUID id){
         return organizadorRepository.findById(id);

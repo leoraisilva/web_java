@@ -2,6 +2,7 @@ package com.web.web_vcard.java.dto;
 
 import jakarta.persistence.Column;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.UUID;
 
@@ -9,8 +10,8 @@ public class VcardTrasDTO {
     private UUID id_vcard;
     private String informacaoContato;
     private long view;
-    private String contato;
-    private Date dataPublicacao;
+    private String categoria;
+    private LocalDate dataPublicacao;
     private UUID proprietario_id;
     private String proprietario_type;
 
@@ -26,8 +27,8 @@ public class VcardTrasDTO {
         return informacaoContato;
     }
 
-    public String getContato() {
-        return contato;
+    public String getCategoria() {
+        return categoria;
     }
 
     public UUID getId_vcard() {
@@ -38,7 +39,7 @@ public class VcardTrasDTO {
         return view;
     }
 
-    public Date getDataPublicacao() {
+    public LocalDate getDataPublicacao() {
         return dataPublicacao;
     }
 }
