@@ -1,0 +1,25 @@
+.container-menu {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: 2rem;
+    height: 50vh;
+}
+
+.content-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.content-menu span {
+    color: #696969;
+    font-size: 2rem;
+}
+
+.content-menu span:active {
+    color: #000;
+    cursor: pointer;
+}

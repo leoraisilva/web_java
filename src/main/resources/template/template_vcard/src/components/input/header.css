@@ -1,0 +1,54 @@
+.cabecario-container {
+    display: flex;
+    margin: 1rem;
+}
+
+.cabecario-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+    padding: 0.3rem;
+    background-color: #eee;
+    border-radius: 8rem;
+}
+
+.input-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee;
+}
+
+.input-btn input{
+    border: none;
+    background-color: #eee;
+}
+
+.input-btn span{
+    background-color: transparent;
+    border-radius: 8rem;
+    color: #c0c0c0;
+}
+
+.avatar-content {
+    border: .1rem solid #eee;
+    border-radius: 8rem;
+    background: transparent;
+    padding-right: .3rem;
+}
+
+.avatar-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    color: #696969;
+    background: transparent;
+}
+
+.avatar-input span{
+    background: #eee;
+    border-radius: 8rem;
+    padding: .3rem;
+}
